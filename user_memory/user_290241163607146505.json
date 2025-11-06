@@ -1,0 +1,63 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-04T18:16:19.473947",
+  "last_updated": "2025-11-04T21:59:41.504519",
+  "short_term": [
+    {
+      "role": "user",
+      "content": "honestly looking at your scripts here looks like everything you do here is for this purpose lmao",
+      "timestamp": "2025-11-04T21:22:01.762171"
+    },
+    {
+      "role": "user",
+      "content": "hey sorry to bother again <@766054890207313931> but now when i close roop and wanna open it back do i still have to use windows installer?",
+      "timestamp": "2025-11-04T21:24:58.164547"
+    },
+    {
+      "role": "user",
+      "content": "<@766054890207313931> one thing i noticed about  roop in general is that when parts ot the face are covered by small objects it tends to looks really bad",
+      "timestamp": "2025-11-04T21:56:07.836925"
+    },
+    {
+      "role": "user",
+      "content": "It also does open mouths horribly",
+      "timestamp": "2025-11-04T21:56:12.865261"
+    },
+    {
+      "role": "user",
+      "content": "Which sucks when subjects are talking",
+      "timestamp": "2025-11-04T21:56:25.421750"
+    },
+    {
+      "role": "user",
+      "content": "Is there something in particular u do to prevent that or is rope  goated and does it for you",
+      "timestamp": "2025-11-04T21:56:44.592685"
+    },
+    {
+      "role": "user",
+      "content": "Where is occluder?",
+      "timestamp": "2025-11-04T21:58:13.294540"
+    },
+    {
+      "role": "user",
+      "content": "",
+      "timestamp": "2025-11-04T21:58:36.533738"
+    },
+    {
+      "role": "user",
+      "content": "u mean this?",
+      "timestamp": "2025-11-04T21:58:39.560179"
+    },
+    {
+      "role": "user",
+      "content": "oh its a rope thing",
+      "timestamp": "2025-11-04T21:59:41.504519"
+    }
+  ],
+  "long_term": {},
+  "semantic_memory": [],
+  "statistics": {
+    "total_messages": 47,
+    "last_interaction": "2025-11-04T21:59:41.504519"
+  }
+}

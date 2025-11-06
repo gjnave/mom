@@ -1,0 +1,63 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-04T18:58:53.064001",
+  "last_updated": "2025-11-05T00:42:20.925070",
+  "short_term": [
+    {
+      "role": "user",
+      "content": "suddenly it started working now that I tried to show you the problem",
+      "timestamp": "2025-11-04T22:33:42.222123"
+    },
+    {
+      "role": "user",
+      "content": "I'll use my Revo uninstaller portable to clean uninstall the multiple pythons, completely wipe them out",
+      "timestamp": "2025-11-04T22:41:57.874613"
+    },
+    {
+      "role": "user",
+      "content": "I very recently bought this laptop, so luckily I won't be losing much of anything with the uninstalls",
+      "timestamp": "2025-11-04T22:44:22.467956"
+    },
+    {
+      "role": "user",
+      "content": "I ran into an issue where even after uninstalling the pyhons, including 3.13, the requirements checker still showed my system was using py 3.13.... and I figured out it was because of leftover py file",
+      "timestamp": "2025-11-04T23:47:53.788717"
+    },
+    {
+      "role": "user",
+      "content": "SurfShark VPN's Anti-virus may have been interfering with the memoavatar install with those two dll files. I disabled the anti virus when the dll not found came up, clicked ok on the dll not found not",
+      "timestamp": "2025-11-04T23:57:13.967707"
+    },
+    {
+      "role": "user",
+      "content": "hmm ok, and yeah it wasn't the anti virus. I'll try that, thanks for the tip",
+      "timestamp": "2025-11-05T00:16:37.463188"
+    },
+    {
+      "role": "user",
+      "content": "looks like i'll need to install cuda and not just the toolkiit, this shows up not far into the install: Could not solve for environment specs\nThe following package could not be installed\n└─ cuda-toolk",
+      "timestamp": "2025-11-05T00:22:44.456416"
+    },
+    {
+      "role": "user",
+      "content": "or i need this cuda version",
+      "timestamp": "2025-11-05T00:23:00.196969"
+    },
+    {
+      "role": "user",
+      "content": "ok, I'll subscribe to your Patreon, if even only for 1 month",
+      "timestamp": "2025-11-05T00:25:00.218097"
+    },
+    {
+      "role": "user",
+      "content": "yeah i do have all my software and files on here, don't want to reinstall win 11 unless i really have to. I'll do it the other way, not a problem. Thanks again. g nite",
+      "timestamp": "2025-11-05T00:42:20.925070"
+    }
+  ],
+  "long_term": {},
+  "semantic_memory": [],
+  "statistics": {
+    "total_messages": 23,
+    "last_interaction": "2025-11-05T00:42:20.925070"
+  }
+}

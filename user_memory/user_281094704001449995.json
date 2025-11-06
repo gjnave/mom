@@ -1,0 +1,28 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-05T09:03:40.444054",
+  "last_updated": "2025-11-05T11:25:28.496981",
+  "short_term": [
+    {
+      "role": "user",
+      "content": "My new jazz single “Ode in Red” dropped today. Go like and share with a friend for me please and thank you. 🙏 \n\nhttps://youtu.be/UMeGQopchHU?si=0xl8C-CoNzo5gM1r",
+      "timestamp": "2025-11-05T09:03:40.444054"
+    },
+    {
+      "role": "user",
+      "content": "Thanks GJ!",
+      "timestamp": "2025-11-05T11:24:59.340685"
+    },
+    {
+      "role": "user",
+      "content": "I haven’t forgotten about the lyric video for my metal opera album from before. Been on some travel and not much time to edit",
+      "timestamp": "2025-11-05T11:25:28.496981"
+    }
+  ],
+  "long_term": {},
+  "semantic_memory": [],
+  "statistics": {
+    "total_messages": 3,
+    "last_interaction": "2025-11-05T11:25:28.496981"
+  }
+}

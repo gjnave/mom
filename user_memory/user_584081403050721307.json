@@ -1,0 +1,41 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-04T16:17:39.121316",
+  "last_updated": "2025-11-05T11:47:06.884034",
+  "short_term": [],
+  "long_term": {},
+  "semantic_memory": [
+    {
+      "content": "Nero was my dog",
+      "importance": 10,
+      "timestamp": "2025-11-05T11:37:46.706181",
+      "hash": "e5944723",
+      "access_count": 0
+    },
+    {
+      "content": "i was born october 12",
+      "importance": 10,
+      "timestamp": "2025-11-05T11:46:18.166455",
+      "hash": "4109050a",
+      "access_count": 0
+    },
+    {
+      "content": "I was the owner of Nero the dog you know alot about",
+      "importance": 10,
+      "timestamp": "2025-11-05T11:47:06.884034",
+      "hash": "7f98b121",
+      "access_count": 0
+    },
+    {
+      "content": "I live in Oslo, Norway",
+      "importance": 5,
+      "timestamp": "2025-11-05T11:45:52.468955",
+      "hash": "a220fbd3",
+      "access_count": 0
+    }
+  ],
+  "statistics": {
+    "total_messages": 23,
+    "last_interaction": "2025-11-05T11:39:23.169896"
+  }
+}

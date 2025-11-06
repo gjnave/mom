@@ -1,0 +1,47 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-04T16:14:53.827558",
+  "last_updated": "2025-11-05T17:59:16.959486",
+  "short_term": [
+    {
+      "role": "user",
+      "content": "Mom",
+      "timestamp": "2025-11-05T17:59:16.959486"
+    }
+  ],
+  "long_term": {},
+  "semantic_memory": [
+    {
+      "content": "that I am your son named Gary. I am a cowboy and you are my country mom.",
+      "importance": 5,
+      "timestamp": "2025-11-04T17:55:16.468694",
+      "hash": "7012aee2",
+      "access_count": 0
+    },
+    {
+      "content": "this is what i look like\n\n**Visual Description:** The person in the image is a man with long, wavy, reddish-brown hair and a beard. He has fair skin and a slightly flushed complexion. His eyes are wide open and his mouth is slightly agape, giving him a surprised or excited expression. He is wearing a green baseball cap with a small logo on the front. The man's eyebrows are thick and dark, and his nose is slightly upturned. He has a small mole on his left cheek. His lips are full and slightly parted. The man's jawline is strong and defined. He has a few freckles scattered across his face. The overall impression is one of surprise or excitement, as if he has just seen something unexpected or is about to say something important.",
+      "importance": 5,
+      "timestamp": "2025-11-05T00:10:54.391253",
+      "hash": "6d5a5fb4",
+      "access_count": 0
+    },
+    {
+      "content": "this is also what i look like\n\n**Visual Description:** The person in this image is a man with long, wavy brown hair and a beard. He has a fair complexion and is wearing a green baseball cap with an American flag patch on the front. His eyes are blue, and he has a friendly, approachable expression. He is smiling and looking directly at the camera. The image has a slightly blurred, dreamy quality to it, giving it a soft, ethereal feel.",
+      "importance": 5,
+      "timestamp": "2025-11-05T00:20:11.449488",
+      "hash": "515b3549",
+      "access_count": 0
+    },
+    {
+      "content": "i also look like this when im shaved\n\n**Visual Description:** The person in the image is a man with long, light brown hair, wearing a black and white patterned shirt. He has a light skin tone and is wearing glasses. He is also wearing a baseball cap. The man has a slightly rounded face with a prominent jawline. His eyebrows are dark and slightly bushy. He has a small nose and full lips. His eyes are light-colored, possibly blue or green. He is wearing a headset with a microphone attached. The man appears to be looking directly at the camera with a neutral expression. The background behind him is a dark, smoky color with the words \"UNDERCOVER AI\" written in orange and yellow letters. There is a small image of a dragon's head in the top right corner of the image. The dragon has large eyes and a small mouth. The image has a pixelated, retro video game aesthetic.",
+      "importance": 5,
+      "timestamp": "2025-11-05T00:22:04.052933",
+      "hash": "7cad6cd5",
+      "access_count": 0
+    }
+  ],
+  "statistics": {
+    "total_messages": 361,
+    "last_interaction": "2025-11-05T17:59:16.959486"
+  }
+}

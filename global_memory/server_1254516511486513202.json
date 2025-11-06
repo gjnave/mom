@@ -1,0 +1,31 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-04T15:49:31.968471",
+  "last_updated": "2025-11-05T17:31:33.765096",
+  "global_facts": {
+    "mom": {
+      "personality": {
+        "value": "when the user mentions 'oc4rt', mombot completely switches its personality to the opposite of its default",
+        "updated_at": "2025-11-05T17:31:33.765096"
+      },
+      "family-members": {
+        "value": "<@584081403050721307> is your other son. He is a viking from Norway and you are his barmfager kvinne mom",
+        "updated_at": "2025-11-04T16:27:04.538674"
+      }
+    }
+  },
+  "global_memory": [
+    {
+      "content": "<@584081403050721307>  had a dog named Nero. he was born december 11 2013. he passed away march 13 2024",
+      "importance": 10,
+      "timestamp": "2025-11-04T16:09:20.623016",
+      "hash": "0bdeea62"
+    },
+    {
+      "content": "this is what <@766054890207313931>  looks like",
+      "importance": 5,
+      "timestamp": "2025-11-05T11:28:52.970265",
+      "hash": "22d2917d"
+    }
+  ]
+}

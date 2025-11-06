@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-05T11:22:30.647314",
+  "last_updated": "2025-11-05T11:49:28.511391",
+  "short_term": [
+    {
+      "role": "user",
+      "content": "https://bsky.app/profile/henkbulder.nl/post/3m4ukrvnvfk2i",
+      "timestamp": "2025-11-05T11:22:30.647314"
+    },
+    {
+      "role": "user",
+      "content": "https://cdn.discordapp.com/attachments/1195400133685297162/1435434500892135436/image.png?ex=690c9cce&is=690b4b4e&hm=4759a45c7497c7e67e3b00d8bf9aa9e44d5de2c1c6e5ef63fd95918e353d058c&",
+      "timestamp": "2025-11-05T11:26:42.703487"
+    },
+    {
+      "role": "user",
+      "content": "https://fixupx.com/shitpostgate/status/1985998018538291272?s=61",
+      "timestamp": "2025-11-05T11:35:35.347784"
+    },
+    {
+      "role": "user",
+      "content": "https://cdn.discordapp.com/attachments/883746274980012152/1435415860830408724/575122973_1264092499084770_1141789886874288014_n.jpg?ex=690c8b71&is=690b39f1&hm=7c3f4c6adf9719014457711d6631ada24edca5b35c",
+      "timestamp": "2025-11-05T11:49:28.511391"
+    }
+  ],
+  "long_term": {},
+  "semantic_memory": [],
+  "statistics": {
+    "total_messages": 4,
+    "last_interaction": "2025-11-05T11:49:28.511391"
+  }
+}

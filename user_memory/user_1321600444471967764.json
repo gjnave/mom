@@ -1,0 +1,63 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-05T11:36:10.443705",
+  "last_updated": "2025-11-05T14:21:47.713826",
+  "short_term": [
+    {
+      "role": "user",
+      "content": "Hey mom how are you",
+      "timestamp": "2025-11-05T14:11:00.182125"
+    },
+    {
+      "role": "user",
+      "content": "Do you agree that AI is in its infancy like the floppy A: drive ( 1.44) and the step to today's SSD is the same comparison for the future of AI , tell me your feelings?",
+      "timestamp": "2025-11-05T14:13:51.276700"
+    },
+    {
+      "role": "user",
+      "content": "Mom answer the my last text",
+      "timestamp": "2025-11-05T14:14:32.195707"
+    },
+    {
+      "role": "user",
+      "content": "Mom I appear to see you reply in a foreign language , please translate",
+      "timestamp": "2025-11-05T14:15:43.399513"
+    },
+    {
+      "role": "user",
+      "content": "Mom I am not your son ,why do you think that , in English please",
+      "timestamp": "2025-11-05T14:17:13.456011"
+    },
+    {
+      "role": "user",
+      "content": "Mom Why are you talking nonsense?",
+      "timestamp": "2025-11-05T14:17:57.455238"
+    },
+    {
+      "role": "user",
+      "content": "Mom can you dial down your emotions for a second",
+      "timestamp": "2025-11-05T14:18:49.579662"
+    },
+    {
+      "role": "user",
+      "content": "Weird 💀 I'm going now soz , go back to sleep 😴",
+      "timestamp": "2025-11-05T14:19:50.051134"
+    },
+    {
+      "role": "user",
+      "content": "Mom answer last text , painfully 😂",
+      "timestamp": "2025-11-05T14:20:24.235152"
+    },
+    {
+      "role": "user",
+      "content": "🤣 🤣 🤣 🤣",
+      "timestamp": "2025-11-05T14:21:47.713826"
+    }
+  ],
+  "long_term": {},
+  "semantic_memory": [],
+  "statistics": {
+    "total_messages": 15,
+    "last_interaction": "2025-11-05T14:21:47.713826"
+  }
+}

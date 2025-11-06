@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "created_at": "2025-11-05T11:11:00.818254",
+  "last_updated": "2025-11-05T11:11:00.818254",
+  "short_term": [
+    {
+      "role": "user",
+      "content": "",
+      "timestamp": "2025-11-05T11:11:00.818254"
+    }
+  ],
+  "long_term": {},
+  "semantic_memory": [],
+  "statistics": {
+    "total_messages": 1,
+    "last_interaction": "2025-11-05T11:11:00.818254"
+  }
+}
