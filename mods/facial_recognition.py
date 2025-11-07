@@ -1,7 +1,5 @@
-
 """
 Facial Recognition Plugin
-This plugin allows users to store their face and be recognized.
 """
 
 import logging
@@ -16,7 +14,7 @@ import asyncio
 # ============================================================================
 
 class FaceEngine:
-    def __init__(self, storage_path="D:\\discordbot\\mom\\mods\\facial-recognition\\face_data.pkl"):
+    def __init__(self, storage_path="mods/facial-recognition/face_data.pkl"):
         self.known_faces = {}
         self.storage_file = storage_path
         self.load_faces()
@@ -32,6 +30,7 @@ class FaceEngine:
 
     def save_faces(self):
         """Save face data"""
+        os.makedirs(os.path.dirname(self.storage_file), exist_ok=True)
         with open(self.storage_file, 'wb') as f:
             pickle.dump(self.known_faces, f)
         logging.info("Face data saved")
@@ -69,7 +68,7 @@ class FaceEngine:
         """Recognize faces in an image"""
         if not os.path.exists(image_path):
             logging.error(f"Image file {image_path} not found")
-            return None
+            return None, None
 
         try:
             test_image = face_recognition.load_image_file(image_path)
@@ -77,7 +76,7 @@ class FaceEngine:
 
             if not test_encodings:
                 logging.warning("No faces found in the test image")
-                return None
+                return None, None
 
             known_encodings = []
             known_names = []
@@ -88,7 +87,7 @@ class FaceEngine:
                     known_names.append(name)
 
             if not known_encodings:
-                return None
+                return None, None
 
             for test_encoding in test_encodings:
                 matches = face_recognition.compare_faces(known_encodings, test_encoding, tolerance=0.6)
@@ -96,38 +95,59 @@ class FaceEngine:
                 best_match_index = face_distances.argmin()
 
                 if matches[best_match_index]:
-                    return known_names[best_match_index]
+                    confidence = (1 - face_distances[best_match_index]) * 100
+                    return known_names[best_match_index], confidence
 
-            return None
+            return None, None
 
         except Exception as e:
             logging.error(f"Error during recognition: {e}")
-            return None
+            return None, None
 
-# ============================================================================
-# Plugin Setup
-# ============================================================================
+    def list_faces(self):
+        """List all stored faces"""
+        if not self.known_faces:
+            return "No faces stored yet"
+
+        face_list = "Stored faces:\n"
+        for name, encodings in self.known_faces.items():
+            face_list += f"  {name}: {len(encodings)} image(s)\n"
+        return face_list
+
+    def delete_face(self, name):
+        """Delete a face profile"""
+        if name in self.known_faces:
+            del self.known_faces[name]
+            self.save_faces()
+            return True
+        return False
 
 face_engine = FaceEngine()
 
 # ============================================================================
 # CUSTOM COMMANDS
 # ============================================================================
+async def set_image_command(message, user_id):
+    """Command: !setimage or !setimage <userid>"""
+    parts = message.content.split()
+    target_user_id = ""
+    is_owner = message.author.id == message.guild.owner_id
 
-async def store_image_command(message, user_id):
-    """Command: !storeimage
-    Stores your face for recognition. You must attach an image to the message.
-    """
+    if len(parts) > 1:
+        if not is_owner:
+            await message.channel.send("Only the server owner can set an image for another user.")
+            return
+        target_user_id = parts[1].strip('<@!>')
+    else:
+        target_user_id = str(user_id)
+
     if not message.attachments:
-        await message.channel.send("To use `!storeimage`, please upload an image along with your message.")
+        await message.channel.send("Please attach an image to use this command.")
         return
 
     attachment = message.attachments[0]
-    if not any(attachment.filename.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg', '.bmp', '.gif']):
-        await message.channel.send("Please attach a valid image file (png, jpg, jpeg, bmp, gif).")
-        return
+    temp_image_path = f"mods/facial-recognition/temp_{attachment.filename}"
 
-    temp_image_path = f"D:\\discordbot\\mom\\mods\\facial-recognition\\temp_{attachment.filename}"
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(attachment.url) as resp:
@@ -135,32 +155,31 @@ async def store_image_command(message, user_id):
                     with open(temp_image_path, 'wb') as f:
                         f.write(await resp.read())
 
-        if face_engine.add_face(temp_image_path, str(user_id)):
-            await message.channel.send(f"Your face has been stored, <@{user_id}>!")
+        if face_engine.add_face(temp_image_path, target_user_id):
+            await message.channel.send(f"Face image stored for <@{target_user_id}>.")
         else:
-            await message.channel.send("Could not store your face. Make sure the image contains a clear face.")
-
-    except Exception as e:
-        logging.error(f"Error storing image: {e}")
-        await message.channel.send("An error occurred while storing the image.")
+            await message.channel.send("Could not store the face. Make sure the image is clear.")
     finally:
         if os.path.exists(temp_image_path):
             os.remove(temp_image_path)
+
+async def list_faces_command(message, user_id):
+    """Command: !listfaces"""
+    if message.author.id != message.guild.owner_id:
+        await message.channel.send("Only the server owner can use this command.")
+        return
+
+    await message.channel.send(face_engine.list_faces())
 
 async def match_image_command(message, user_id):
-    """Command: !matchimage
-    Matches a face in an image with stored faces. You must attach an image to the message.
-    """
+    """Command: !matchimage or !matchface"""
     if not message.attachments:
-        await message.channel.send("To use `!matchimage`, please upload an image along with your message.")
+        await message.channel.send("Please attach an image to use this command.")
         return
 
     attachment = message.attachments[0]
-    if not any(attachment.filename.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg', '.bmp', '.gif']):
-        await message.channel.send("Please attach a valid image file (png, jpg, jpeg, bmp, gif).")
-        return
+    temp_image_path = f"mods/facial-recognition/temp_{attachment.filename}"
 
-    temp_image_path = f"D:\\discordbot\\mom\\mods\\facial-recognition\\temp_{attachment.filename}"
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(attachment.url) as resp:
@@ -168,36 +187,44 @@ async def match_image_command(message, user_id):
                     with open(temp_image_path, 'wb') as f:
                         f.write(await resp.read())
 
-        match = face_engine.recognize_face(temp_image_path)
+        match, confidence = face_engine.recognize_face(temp_image_path)
 
         if match:
-            await message.channel.send(f"Match found: <@{match}>")
+            await message.channel.send(f"Match found: <@{match}> with {confidence:.1f}% confidence.")
         else:
             await message.channel.send("No match found.")
-
-    except Exception as e:
-        logging.error(f"Error matching image: {e}")
-        await message.channel.send("An error occurred while matching the image.")
     finally:
         if os.path.exists(temp_image_path):
             os.remove(temp_image_path)
 
-# Register your commands here
+async def delete_image_command(message, user_id):
+    """Command: !deleteimage <userid>"""
+    if message.author.id != message.guild.owner_id:
+        await message.channel.send("Only the server owner can use this command.")
+        return
+
+    parts = message.content.split()
+    if len(parts) < 2:
+        await message.channel.send("Please specify a user ID to delete.")
+        return
+
+    target_user_id = parts[1].strip('<@!>')
+    if face_engine.delete_face(target_user_id):
+        await message.channel.send(f"Image profile for <@{target_user_id}> has been deleted.")
+    else:
+        await message.channel.send(f"No image profile found for <@{target_user_id}>.")
+
 commands = {
-    "storeimage": store_image_command,
+    "setimage": set_image_command,
+    "listfaces": list_faces_command,
     "matchimage": match_image_command,
+    "matchface": match_image_command,
+    "deleteimage": delete_image_command,
 }
 
 # ============================================================================
 # HOOK IMPLEMENTATIONS
 # ============================================================================
-
-async def on_message_received(message):
-    """
-    Called for every message the bot receives.
-    """
-    logging.info(f"Plugin received message: '{message.content}' with {len(message.attachments)} attachments.")
-    return None
 
 async def on_bot_ready(discord_client):
     """
@@ -205,9 +232,19 @@ async def on_bot_ready(discord_client):
     """
     logging.info("Facial Recognition plugin loaded successfully!")
 
+async def on_message_received(message):
+    """
+    Called for every message the bot receives.
+    """
+    if "who is this" in message.content.lower() or "who is in this image" in message.content.lower():
+        if message.attachments:
+            await match_image_command(message, message.author.id)
+            return False
+    return None
+
 # ============================================================================
 # SETUP (REQUIRED)
-# ============================================================================
+# =================================_===========================================
 
 def setup():
     """
@@ -217,6 +254,5 @@ def setup():
         "name": "Facial Recognition",
         "version": "1.0",
         "description": "A plugin for storing and recognizing faces.",
-        "author": "Gemini"
+        "author": "Jules"
     }
-
